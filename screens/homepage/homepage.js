@@ -1,15 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GlobalStyles } from '../../styles/globalStyles';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import WarningPopup from './WarningPopup';
 import FireDanger from './FireDanger';
+import Load from './Load';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
 
 export default function Homepage({navigation}) {
 
+  // const [loading, setLoading] = useState(true)
     
+  // setTimeout(() => {
+  //   setLoading(false)
+  // }, 2000)
+
+  // if (loading) {
+  //   return <Load />
+  // }
   
   const fireDangerRating = 4
 

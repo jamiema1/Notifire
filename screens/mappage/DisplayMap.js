@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Image } from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
-const fireIcon = require('../../assets/icon-fire.png')
+const fireIcon = require('../../assets/images/icon-fire.png')
 
 const locations = [{latitude: -33.8688,longitude: 151.2093}, {latitude: -33.86,longitude: 151.20}]
 
