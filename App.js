@@ -10,7 +10,8 @@ import { useFonts } from 'expo-font';
 export default function App() {
 
   const [fontsLoaded] = useFonts({
-    'Barlow': require("./assets/fonts/Barlow-Black.ttf")
+    'Barlow': require("./assets/fonts/Barlow-Regular.ttf"),
+    'BarlowBold': require("./assets/fonts/Barlow-Bold.ttf")
   })
 
   if (!fontsLoaded) {

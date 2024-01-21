@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import WarningPopup from './WarningPopup';
 import FireDanger from './FireDanger';
 import Load from './Load';
+import AirPollution from './AirPollution';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
@@ -27,6 +28,7 @@ export default function Homepage({navigation}) {
     <>
       {fireDangerRating >= 3 && <WarningPopup />}
       <FireDanger />
+      <AirPollution />
       <Button onPress={() => navigation.navigate("Map")} title={"button"}>Map</Button>
     </>
   )
