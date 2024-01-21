@@ -25,6 +25,9 @@
     },
     "web": {
       "favicon": "./assets/images/notifire_logo.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

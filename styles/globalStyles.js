@@ -29,7 +29,8 @@ export const GlobalStyles = StyleSheet.create({
   },
   mediumFontSize: {
     fontSize: 1,
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Barlow'
   },
   numberProperties: {
     fontSize: 48,
@@ -40,6 +41,5 @@ export const GlobalStyles = StyleSheet.create({
   },
   images: {
     width: '100%',
-
   }
 });
