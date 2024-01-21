@@ -1,6 +1,6 @@
 import React from 'react'
 import { GlobalStyles, RoundedSquare } from '../../styles/globalStyles';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
 const APmeter1 = require('../../assets/images/AP Meter 1.png')
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: '16%'
+    height: Dimensions.get("screen").height * 0.16
   },
   mediumFontSize: {
     ...GlobalStyles.mediumFontSize,

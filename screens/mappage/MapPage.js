@@ -4,13 +4,13 @@ import DisplayMap from './DisplayMap'
 import { StyleSheet } from 'react-native'
 import CustomButton from '../../customComponents/Button'
 
-export default function MapPage({navigation}) {
+export default function MapPage({route, navigation}) {
   
-
+  const { position } = route.params;
 
   return (
     <>
-      <DisplayMap />
+      <DisplayMap position={position} />
       {/* <CustomButton 
         onPress={() => goBack()}
         styles={styles} 
