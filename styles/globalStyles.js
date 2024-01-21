@@ -39,7 +39,7 @@ export const GlobalStyles = StyleSheet.create({
     backgroundColor: '#161F33'
   },
   images: {
-    width: '100%',
-
+    // height: '100%',
+    // width: '100%',
   }
 });

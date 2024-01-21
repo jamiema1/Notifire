@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Image } from 'react-native';
 import WarningPopup from './WarningPopup';
 import FireDanger from './FireDanger';
+import AirPollution from './AirPollution';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
@@ -16,6 +17,7 @@ export default function Homepage() {
     <>
       {fireDangerRating >= 3 && <WarningPopup />}
       <FireDanger />
+      <AirPollution />
       <StatusBar style="auto" />
     </>
   )
