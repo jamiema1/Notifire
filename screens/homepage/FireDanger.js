@@ -25,7 +25,7 @@ const riskInformationText =
   ]
 
 export default function FireDanger() {
-  const fireDangerLevel = 3 // TODO change
+  const fireDangerLevel = 5 // TODO change
 
   return (
     <View style={styles.rectangle}>

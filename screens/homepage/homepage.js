@@ -17,7 +17,7 @@ export default function Homepage({navigation}) {
   
   return (
     <>
-      {fireDangerRating >= 3 && <WarningPopup />}
+      {fireDangerRating > 1 && <WarningPopup fireDangerRating={fireDangerRating}/>}
       <FireDanger />
       <AirPollution />
       <Button onPress={() => navigation.navigate("Map")} title={"button"}>Map</Button>
