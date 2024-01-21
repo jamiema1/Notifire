@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export const GlobalStyles = StyleSheet.create({
   globalStyles: {
-    fontFamily: "Barlow-Black",
+    fontFamily: "Calibri",
     fontSize: 20
   }
 });
