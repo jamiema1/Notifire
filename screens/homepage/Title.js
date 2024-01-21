@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
-import { GlobalStyles, windowHeight, windowWidth } from '../../styles/globalStyles';
+import { GlobalStyles, windowWidth } from '../../styles/globalStyles';
 import { useNavigation } from '@react-navigation/native';
 
-const savedLogo = require('../../assets/images/icon-saved.png')
+const savedIcon = require('../../assets/images/icon-saved.png')
+const pinIcon = require('../../assets/images/icon-pin.png')
 const logo = require('../../assets/images/notifire_logo.png')
 
 export default function Title ({dataMap, setLocation}) {
@@ -33,8 +34,8 @@ export default function Title ({dataMap, setLocation}) {
         });
       }}>
         <Image
-          source={savedLogo}
-          style={{ width: 30, height: 30 }}
+          source={pinIcon}
+          style={styles.image}
         />
       </TouchableOpacity>
       <Text style={GlobalStyles.largeBoldFontSize}>NOTIFIRE</Text>
@@ -48,7 +49,7 @@ export default function Title ({dataMap, setLocation}) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 30,
-    height: 30
+    width: 25,
+    height: 25
   }
 })
