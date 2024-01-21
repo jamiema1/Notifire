@@ -15,8 +15,7 @@ const meterLevels = [meter0, meter1, meter2, meter3, meter4, meter5]
 
 const riskLevels = ["Very Low", "Low", "Moderate", "High", "Very High", "Extreme"]
 
-export default function FireDanger() {
-  const fireDangerLevel = 3 // TODO change
+export default function FireDanger({fireDanger}) {
 
   return (
     <View style={styles.rectangle}>
@@ -26,7 +25,7 @@ export default function FireDanger() {
         </Text>
         {/* <View style={{flexDirection:"row"}}> TODO make it so 3 is aligned beside the stacked text */}
           <Text style={GlobalStyles.numberProperties}>
-            {fireDangerLevel}
+            {fireDanger}
           </Text>
           {/* <Text style={styles.mediumFontSize}>
             {riskLevels[fireDangerLevel]}
@@ -37,11 +36,11 @@ export default function FireDanger() {
         <View style={GlobalStyles.containerAlignCenter}>
           <Image
             style={GlobalStyles.images}
-            source={meterLevels[fireDangerLevel]}
+            source={meterLevels[fireDanger]}
           />
         </View>
         <Text style={GlobalStyles.smallFontSize}>
-          The current fire danger level is {fireDangerLevel}, {riskLevels[fireDangerLevel].toLowerCase()}, Lorem ipsum dolor sit amet.
+          The current fire danger level is {fireDanger}, {riskLevels[fireDanger].toLowerCase()}, Lorem ipsum dolor sit amet.
         </Text>
       </View>
     </View>

@@ -13,8 +13,7 @@ const meterLevels = [APmeter1, APmeter2, APmeter3, APmeter4, APmeter5]
 
 const airQuality = ["Good", "Low", "Moderate", "High", "Very High", "Extreme"]
 
-export default function AirPollution() {
-  const airPollutionLevel = 3 // TODO change
+export default function AirPollution({airPollution}) {
 
   return (
     <View style={styles.rectangle}>
@@ -22,11 +21,10 @@ export default function AirPollution() {
         <Text style={GlobalStyles.smallBoldFontSize}>
           AIR POLLUTION
         </Text>
-
         <View style={GlobalStyles.containerAlignCenter}>
           <Image
             style={GlobalStyles.images}
-            source={meterLevels[airPollutionLevel]}
+            source={meterLevels[airPollution ]}
           />
         </View>
       </View>
