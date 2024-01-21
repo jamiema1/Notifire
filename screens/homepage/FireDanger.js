@@ -49,8 +49,8 @@ export default function FireDanger({fireDanger}) {
       }}>
         <Text style={GlobalStyles.largeBoldFontSize}>
           {riskLevels[fireDanger]}
-          </Text>
-          <Text style={GlobalStyles.largeFontSize}>
+        </Text>
+        <Text style={GlobalStyles.largeFontSize}>
           {underRiskLevels[fireDanger]}
         </Text>
       </View>

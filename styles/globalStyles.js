@@ -65,6 +65,11 @@ export const GlobalStyles = StyleSheet.create({
     color: 'white',
     fontFamily: 'BarlowBold'
   },
+  extraLargeBoldFontSize: {
+    fontSize: 36,
+    color: 'white',
+    fontFamily: 'BarlowBold'
+  },
   numberProperties: {
     fontSize: 48,
     color: 'white',

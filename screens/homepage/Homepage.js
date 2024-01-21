@@ -7,6 +7,7 @@ import Load from './Load';
 import AirPollution from './AirPollution';
 import MapSection from './MapSection';
 import { getData } from '../../data/fireIndex';
+import City from './City';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
@@ -22,16 +23,7 @@ export default function Homepage({navigation}) {
 
   const [location, setLocation] = useState(dataMap.get(1))
 
-  const [loading, setLoading] = useState(true)
-    
-  setTimeout(() => {
-    setLoading(false)
-  }, 2150)
-
-  if (loading) {
-    return <Load />
-  }
-
+  const city = location.city
   const fireDanger = location.fire
   const airPollution = location.air
   const wind = location.wind
@@ -41,7 +33,8 @@ export default function Homepage({navigation}) {
   const lon = location.lng
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.homepage}>
+      <City city={city}/>
       {fireDanger >= 3 && <WarningPopup />}
       <FireDanger fireDanger={fireDanger}/>
       <AirPollution airPollution={airPollution}/>
@@ -59,5 +52,8 @@ const styles = StyleSheet.create({
   },
   text: {
     ...GlobalStyles.fontSize
+  },
+  homepage: {
+    backgroundColor: "#212942"
   }
 })

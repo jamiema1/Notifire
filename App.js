@@ -5,6 +5,8 @@ import MapPage from './screens/mappage/MapPage';
 import { NavigationContainer } from '@react-navigation/native' 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
+import Title from './screens/homepage/Title';
+import LoadingPage from './screens/loadingpage/LoadingPage';
 
 
 export default function App() {
@@ -25,9 +27,26 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+       <Stack.Screen
+          name="Loading"
+          component={LoadingPage}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: "#212942"
+            },
+          }}
+        />
+        <Stack.Screen 
           name="Home"
           component={Homepage}
+          options={{
+            headerTitle: () => <Title />,
+            headerBackVisible: false,
+            headerStyle: {
+              backgroundColor: "#212942"
+            },
+          }}
         />
         <Stack.Screen
           name="Map"
@@ -37,15 +56,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    ...GlobalStyles.globalStyles,
-    // ...GlobalStyles.backgroundColor,
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
