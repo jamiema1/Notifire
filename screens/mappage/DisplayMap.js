@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import { Image } from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
+import { getData } from '../../data/fireIndex';
 
-const fireIcon = require('../../assets/icon-fire.png')
+const fireIcon = require('../../assets/images/icon-fire.png')
 
-const locations = [{latitude: -33.8688,longitude: 151.2093}, {latitude: -33.86,longitude: 151.20}]
+const data = getData()
 
-export default function DisplayMap() {
+export default function DisplayMap({position}) {
   const [mapRegion, setmapRegion] = useState({
-    latitude: -33.8688,
-    longitude: 151.2093,
-    latitudeDelta: 0.0922,
-    longitudeDelta: 0.0421,
+    latitude: position.lat,
+    longitude: position.lon,
+    latitudeDelta: 0.1,
+    longitudeDelta: 0.1,
   });
   
   return (
@@ -24,12 +25,12 @@ export default function DisplayMap() {
       showsBuildings={false}
       // onMarkerPress={(e) => {console.log(e)}}
     >
-      {locations.map((location) => 
+      {data.map((location) => 
         <Marker 
-          coordinate = {location}
-          title={"Risk Level (0-5)"}
-          description={"Location"}
-          key={location.latitude}
+          coordinate = {{latitude: location.lat, longitude: location.lng}}
+          title={"Fire Danger: " + location.fire}
+          description={"City: " + location.city}
+          key={location.lat * location.lng}
         >
           <Image 
             source={fireIcon}
