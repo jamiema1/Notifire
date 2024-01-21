@@ -19,7 +19,7 @@ export default function AirPollution() {
   return (
     <View style={styles.rectangle}>
       <View style={styles.warning}>
-        <Text style={styles.text}>
+        <Text style={GlobalStyles.smallBoldFontSize}>
           AIR POLLUTION
         </Text>
 
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: '24%'
+    height: '16%'
   },
   mediumFontSize: {
     ...GlobalStyles.mediumFontSize,

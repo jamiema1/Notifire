@@ -7,7 +7,7 @@ export const GlobalStyles = StyleSheet.create({
   },
   containerAlignleft: {
     borderRadius: 10,
-    padding: 15,
+    padding: 10,
     width: '100%',
     justifyContent: 'center',
     alignItems: 'left'
@@ -20,21 +20,34 @@ export const GlobalStyles = StyleSheet.create({
     alignItems: 'center'
   },
   flextangle: {
-    flex: 1,
+    flex: 1
     // flexDirection: 'row'
   },
   smallFontSize: {
     fontSize: 12,
-    color: 'white'
+    color: 'white',
+    fontFamily: 'Barlow',
+    // padding: 10
+  },
+  smallBoldFontSize: {
+    fontSize: 12,
+    color: 'white',
+    fontFamily: 'BarlowBold'
   },
   mediumFontSize: {
-    fontSize: 1,
+    fontSize: 14,
     color: 'white',
     fontFamily: 'Barlow'
   },
+  mediumBoldFontSize: {
+    fontSize: 14,
+    color: 'white',
+    fontFamily: 'BarlowBold'
+  },
   numberProperties: {
     fontSize: 48,
-    color: 'white'
+    color: 'white',
+    fontFamily: "BarlowBold"
   },
   backgroundColor: {
     backgroundColor: '#161F33'

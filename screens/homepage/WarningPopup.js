@@ -10,14 +10,14 @@ export default function WarningPopup() {
   return (
     <View style={styles.rectangle}>
       <View style={styles.warning}>
-        <Text style={styles.text}>
+        <Text style={GlobalStyles.smallBoldFontSize}>
           WARNING
           <Image
             style={styles.logo}
             source={logo}
           />
         </Text>
-        <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</Text>
+        <Text style={GlobalStyles.mediumFontSize}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</Text>
       </View>
     </View>
   )
