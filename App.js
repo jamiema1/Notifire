@@ -1,4 +1,4 @@
-import Homepage from './screens/homepage/Homepage';
+import Homepage from './screens/homepage/Home';
 import MapPage from './screens/mappage/MapPage';
 import { NavigationContainer } from '@react-navigation/native' 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
