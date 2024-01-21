@@ -1,18 +1,21 @@
 import React from 'react'
 import { GlobalStyles } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import { Image } from 'react-native';
 import WarningPopup from './WarningPopup';
-import { Image } from 'react-native';
 import CustomButton from '../../customComponents/Button';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
+
+
 export default function Homepage({navigation}) {
 
+    
+  
+  const fireDangerRating = 4
 
-
+  
   return (
     <>
       {fireDangerRating >= 3 && <WarningPopup />}
@@ -20,6 +23,7 @@ export default function Homepage({navigation}) {
         style={styles.logo}
         source={logo}
       />
+      <Text style={styles.text}>Text</Text>
       <CustomButton 
         onPress={() =>
           navigation.navigate('Map')
@@ -37,5 +41,8 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     width: 75,
     height: 75,
+  },
+  text: {
+    ...GlobalStyles.fontSize
   }
 })

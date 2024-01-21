@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
   },
   text: {
     ...GlobalStyles.fontSize,
-    alignContent: 'left'
+    alignContent: 'flex-start'
   }
 });

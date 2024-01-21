@@ -4,10 +4,10 @@
     "slug": "Notifire",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/notifire_logo.png",
+    "icon": "./assets/images/notifire_logo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/notifire_logo.png",
+      "image": "./assets/images/notifire_logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,15 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/notifire_logo.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "favicon": "./assets/images/notifire_logo.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

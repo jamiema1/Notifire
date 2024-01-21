@@ -19,12 +19,10 @@ export const GlobalStyles = StyleSheet.create({
   },
   fontSize: {
     fontSize: 15,
-    color: 'black'
-  // rectangles: {
-  // },
-
-},
-font: {
-  fontSize: 40
-}
-);
+    color: 'black',
+    fontFamily: 'Barlow'
+  },
+  font: {
+    fontSize: 40
+  }
+});

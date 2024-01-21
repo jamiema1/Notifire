@@ -29,6 +29,7 @@ export default function DisplayMap() {
           coordinate = {location}
           title={"Risk Level (0-5)"}
           description={"Location"}
+          key={location.latitude}
         >
           <Image 
             source={fireIcon}
