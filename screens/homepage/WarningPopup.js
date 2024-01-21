@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyles, RoundedSquare } from '../../styles/globalStyles';
+import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
@@ -35,6 +35,6 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: '12%'
+    height: windowHeight*0.12
   }
 });

@@ -1,6 +1,6 @@
 import React from 'react'
-import { GlobalStyles, RoundedSquare } from '../../styles/globalStyles';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
+import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
 const APmeter1 = require('../../assets/images/AP Meter 1.png')
@@ -11,44 +11,75 @@ const APmeter5 = require('../../assets/images/AP Meter 5.png')
 
 const meterLevels = [APmeter1, APmeter2, APmeter3, APmeter4, APmeter5]
 
-const airQuality = ["Good", "Low", "Moderate", "High", "Very High", "Extreme"]
+const airQuality = ["Good", "Fair", "Moderate", "Poor ", "Very Poor"]
 
 export default function AirPollution({airPollution}) {
 
   return (
     <View style={styles.rectangle}>
-      <View style={styles.warning}>
-        <Text style={GlobalStyles.smallBoldFontSize}>
+      <View style={GlobalStyles.defaultContainer}>
+        <Text style={styles.smallBoldFontSize}>
           AIR POLLUTION
         </Text>
-        <View style={GlobalStyles.containerAlignCenter}>
-          <Image
-            style={GlobalStyles.images}
-            source={meterLevels[airPollution ]}
-          />
+        <View style={{ flexDirection: 'row'}}>
+            {getAirQualityDisplayNumber(airPollutionLevel)}
+            {getAirQualityString(airPollutionLevel)}
+            {getAirQualityImage(airPollutionLevel)}
         </View>
       </View>
+    </View>
+  );
+}
+
+function getAirQualityImage(airPollutionLevel) {
+  return (
+    <View style={{
+      width: '50%',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <Image
+        style={GlobalStyles.images}
+        source={meterLevels[airPollutionLevel]}
+      />
+    </View>
+  );
+}
+
+function getAirQualityDisplayNumber(airPollutionLevel) {
+  return (
+    <View style={{
+      width: '20%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingLeft: '3%',
+    }}>
+      <Text style={GlobalStyles.numberProperties}>
+        {airPollutionLevel}
+      </Text>
     </View>
   )
 }
 
+function getAirQualityString(airPollutionLevel) {
+  return (
+    <View style={{
+      width: '30%',
+      justifyContent: 'center',
+      alignItems: 'flex-start'
+    }}>
+      <Text style={GlobalStyles.largeFontSize}>{airQuality[airPollutionLevel]} {'\n'}Air Quality</Text>
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
-  warning: {
-    ...GlobalStyles.flextangle,
-    ...GlobalStyles.containerAlignleft,
-    backgroundColor: '#2C3445',
-  },
-  text: {
-    ...GlobalStyles.smallFontSize,
-  },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: Dimensions.get("screen").height * 0.16
+    height: windowHeight*0.17
   },
-  mediumFontSize: {
-    ...GlobalStyles.mediumFontSize,
-    justifyContent: 'center',
-    alignItems: 'center'
+  smallBoldFontSize: {
+    ...GlobalStyles.smallBoldFontSize,
+    paddingLeft: '6%'
   }
 });
