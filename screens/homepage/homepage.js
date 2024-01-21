@@ -1,13 +1,10 @@
 import React from 'react'
 import { GlobalStyles } from '../../styles/globalStyles';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import WarningPopup from './WarningPopup';
-import CustomButton from '../../customComponents/Button';
 import FireDanger from './FireDanger';
 
 const logo = require('../../assets/images/notifire_logo.png')
-
 
 
 export default function Homepage({navigation}) {
@@ -21,6 +18,7 @@ export default function Homepage({navigation}) {
     <>
       {fireDangerRating >= 3 && <WarningPopup />}
       <FireDanger />
+      <Button onPress={() => navigation.navigate("Map")} title={"button"}>Map</Button>
     </>
   )
 }
