@@ -10,6 +10,16 @@
     "dir": "NW"
   },
   {
+    "city": "Adelaide", 
+    "lat": "-34.9275", 
+    "lng": "138.6000",
+    "fire": "1",
+    "air": "3",
+    "wind": "10",
+    "gust": "25",
+    "dir": "NW"
+  },
+  {
     "city": "Melbourne", 
     "lat": "-37.8142", 
     "lng": "144.9631", 
@@ -38,16 +48,6 @@
     "wind": "5",
     "gust": "16",
     "dir": "SE"
-  },
-  {
-    "city": "Adelaide", 
-    "lat": "-34.9275", 
-    "lng": "138.6000",
-    "fire": "3",
-    "air": "3",
-    "wind": "10",
-    "gust": "25",
-    "dir": "NW"
   },
   {
     "city": "Gold Coast", 
