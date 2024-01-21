@@ -21,7 +21,7 @@ export default function FireDanger() {
   return (
     <View style={styles.rectangle}>
       <View style={styles.warning}>
-        <Text style={styles.text}>
+        <Text style={GlobalStyles.smallBoldFontSize}>
           FIRE DANGER
         </Text>
         {/* <View style={{flexDirection:"row"}}> TODO make it so 3 is aligned beside the stacked text */}
@@ -40,7 +40,7 @@ export default function FireDanger() {
             source={meterLevels[fireDangerLevel]}
           />
         </View>
-        <Text style={styles.text}>
+        <Text style={GlobalStyles.smallFontSize}>
           The current fire danger level is {fireDangerLevel}, {riskLevels[fireDangerLevel].toLowerCase()}, Lorem ipsum dolor sit amet.
         </Text>
       </View>
@@ -54,9 +54,6 @@ const styles = StyleSheet.create({
     ...GlobalStyles.flextangle,
     ...GlobalStyles.containerAlignleft,
     backgroundColor: '#2C3445',
-  },
-  text: {
-    ...GlobalStyles.smallFontSize,
   },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
