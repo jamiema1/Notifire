@@ -1,4 +1,7 @@
 import { StyleSheet } from 'react-native';
+import {Dimensions} from 'react-native';
+
+const windowHeight = Dimensions.get('screen').height;
 
 export const GlobalStyles = StyleSheet.create({
   globalStyles: {
@@ -23,47 +26,47 @@ export const GlobalStyles = StyleSheet.create({
     flex: 1
     // flexDirection: 'row'
   },
+  title: {
+    fontSize: 12,
+    color: 'white',
+    fontFamily: 'BarlowBold',
+    paddingLeft: '6%'
+  },
   smallFontSize: {
     fontSize: 12,
     color: 'white',
     fontFamily: 'Barlow',
-    padding: 10
+    // padding: 10
   },
   smallBoldFontSize: {
     fontSize: 12,
     color: 'white',
-    fontFamily: 'BarlowBold',
-    padding: 10
+    fontFamily: 'BarlowBold'
   },
   mediumFontSize: {
     fontSize: 14,
     color: 'white',
-    fontFamily: 'Barlow',
-    padding: 10
+    fontFamily: 'Barlow'
   },
   mediumBoldFontSize: {
     fontSize: 14,
     color: 'white',
-    fontFamily: 'BarlowBold',
-    padding: 10
+    fontFamily: 'BarlowBold'
   },
   largeFontSize: {
     fontSize: 16,
     color: 'white',
-    fontFamily: 'Barlow',
-    padding: 10
+    fontFamily: 'Barlow'
   },
   largeBoldFontSize: {
     fontSize: 16,
     color: 'white',
-    fontFamily: 'BarlowBold',
-    padding: 10
+    fontFamily: 'BarlowBold'
   },
   numberProperties: {
     fontSize: 48,
     color: 'white',
-    fontFamily: "BarlowBold",
-    // padding: 10
+    fontFamily: "BarlowBold"
   },
   backgroundColor: {
     backgroundColor: '#161F33'
@@ -75,7 +78,7 @@ export const GlobalStyles = StyleSheet.create({
   defaultContainer: {
     flex: 1,
     borderRadius: 10,
-    // padding: 10,
+    padding: 10,
     width: '100%',
     justifyContent: 'center',
     alignItems: 'left',

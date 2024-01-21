@@ -21,7 +21,7 @@ export default function FireDanger() {
   return (
     <View style={styles.rectangle}>
       <View style={GlobalStyles.defaultContainer}>
-        <Text style={GlobalStyles.smallBoldFontSize}>
+        <Text style={GlobalStyles.title}>
           FIRE DANGER
         </Text>
         {/* <View style={{flexDirection:"row"}}> TODO make it so 3 is aligned beside the stacked text */}
@@ -52,7 +52,7 @@ export default function FireDanger() {
 const styles = StyleSheet.create({
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: '24%'
+    height: '35%'
   },
   mediumFontSize: {
     ...GlobalStyles.mediumFontSize,

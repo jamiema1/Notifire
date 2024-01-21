@@ -37,9 +37,7 @@ function getAirQualityImage(airPollutionLevel) {
     <View style={{
       width: '50%',
       justifyContent: 'center',
-      alignItems: 'center',
-
-      // borderWidth: 2
+      alignItems: 'center'
     }}>
       <Image
         style={GlobalStyles.images}
@@ -56,7 +54,6 @@ function getAirQualityDisplayNumber(airPollutionLevel) {
       justifyContent: 'center',
       alignItems: 'center',
       paddingLeft: '3%',
-      // borderWidth: 2
     }}>
       <Text style={GlobalStyles.numberProperties}>
         {airPollutionLevel}
@@ -70,14 +67,12 @@ function getAirQualityString(airPollutionLevel) {
     <View style={{
       width: '30%',
       justifyContent: 'center',
-      alignItems: 'flex-start',
-      // borderWidth: 2
+      alignItems: 'flex-start'
     }}>
       <Text style={GlobalStyles.largeFontSize}>{airQuality[airPollutionLevel]} {'\n'}Air Quality</Text>
     </View>
   )
 }
-
 
 const styles = StyleSheet.create({
   rectangle: {
