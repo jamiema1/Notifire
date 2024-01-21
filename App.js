@@ -61,6 +61,7 @@ export default function App() {
             headerStyle: {
               backgroundColor: "#212942"
             },
+            gestureEnabled: false
           }}
         />
         <Stack.Screen
