@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 import WarningPopup from './WarningPopup';
 import CustomButton from '../../customComponents/Button';
+import FireDanger from './FireDanger';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
@@ -19,18 +20,7 @@ export default function Homepage({navigation}) {
   return (
     <>
       {fireDangerRating >= 3 && <WarningPopup />}
-      <Image
-        style={styles.logo}
-        source={logo}
-      />
-      <Text style={styles.text}>Text</Text>
-      <CustomButton 
-        onPress={() =>
-          navigation.navigate('Map')
-        }
-        title="Go to Map"
-      />
-      {/* <StatusBar style="auto" /> */}
+      <FireDanger />
     </>
   )
 }

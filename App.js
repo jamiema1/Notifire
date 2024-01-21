@@ -40,6 +40,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     ...GlobalStyles.globalStyles,
+    // ...GlobalStyles.backgroundColor,
     flex: 1,
     flexDirection: "column",
     backgroundColor: '#fff',
