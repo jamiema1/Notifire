@@ -23,8 +23,6 @@ export default function App() {
 
   const [location, setLocation] = useState(dataMap.get(0))
 
-  // console.log(location)
-
   const [fontsLoaded] = useFonts({
     'Barlow': require("./assets/fonts/Barlow-Regular.ttf"),
     'BarlowBold': require("./assets/fonts/Barlow-Bold.ttf")

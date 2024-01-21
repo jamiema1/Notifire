@@ -13,10 +13,20 @@ export function getData() {
       "city": "Sydney", 
       "lat": "-33.8678", 
       "lng": "151.2100", 
-      "fire": "1",
+      "fire": "0",
       "air": "1",
       "wind": "6",
       "gust": "16",
+      "dir": "NW"
+    },
+    {
+      "city": "Adelaide", 
+      "lat": "-34.9275", 
+      "lng": "138.6000",
+      "fire": "1",
+      "air": "3",
+      "wind": "10",
+      "gust": "25",
       "dir": "NW"
     },
     {
@@ -48,16 +58,6 @@ export function getData() {
       "wind": "5",
       "gust": "16",
       "dir": "SE"
-    },
-    {
-      "city": "Adelaide", 
-      "lat": "-34.9275", 
-      "lng": "138.6000",
-      "fire": "3",
-      "air": "3",
-      "wind": "10",
-      "gust": "25",
-      "dir": "NW"
     },
     {
       "city": "Gold Coast", 

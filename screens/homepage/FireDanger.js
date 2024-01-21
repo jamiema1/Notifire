@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
+import { GlobalStyles } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
