@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyles, RoundedSquare } from '../../styles/globalStyles';
+import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
@@ -14,50 +14,85 @@ const meter5 = require('../../assets/images/Meter 5.png')
 const meterLevels = [meter0, meter1, meter2, meter3, meter4, meter5]
 
 const riskLevels = ["Very Low", "Low", "Moderate", "High", "Very High", "Extreme"]
+const underRiskLevels = ["No Warning", "Advice", "Advice", "Watch and Act", "Watch and Act", "Emergency Warning"]
+const riskInformationText =
+  ["The fire danger level is at 0, very low risk. There is no current threat in your area.",
+    "The fire danger level is at 1, low risk. Read and follow the warning instructions.",
+    "The fire danger level is at 2, moderate risk. Read and follow the warning instructions.",
+    "The fire danger level is at 3, high risk. Read and follow the warning instructions.",
+    "The fire danger level is at 4, very high risk. Read and follow the warning instructions.",
+    "The fire danger level is at 5, extreme risk. Read and follow the warning instructions."
+  ]
 
 export default function FireDanger() {
   const fireDangerLevel = 3 // TODO change
 
   return (
     <View style={styles.rectangle}>
-      <View style={styles.warning}>
-        <Text style={GlobalStyles.smallBoldFontSize}>
+      <View style={GlobalStyles.defaultContainer}>
+        <Text style={GlobalStyles.title}>
           FIRE DANGER
         </Text>
-        {/* <View style={{flexDirection:"row"}}> TODO make it so 3 is aligned beside the stacked text */}
-          <Text style={GlobalStyles.numberProperties}>
-            {fireDangerLevel}
-          </Text>
-          {/* <Text style={styles.mediumFontSize}>
-            {riskLevels[fireDangerLevel]}
-            {"\n"}
-            Test
-          </Text> */}
-        {/* </View> */}
-        <View style={GlobalStyles.containerAlignCenter}>
-          <Image
-            style={GlobalStyles.images}
-            source={meterLevels[fireDangerLevel]}
-          />
+        <View style={{ flexDirection: 'row' }}>
+          {getFireDangerDisplayNumber(fireDangerLevel)}
+          {getRiskLevelText(fireDangerLevel)}
         </View>
-        <Text style={GlobalStyles.smallFontSize}>
-          The current fire danger level is {fireDangerLevel}, {riskLevels[fireDangerLevel].toLowerCase()}, Lorem ipsum dolor sit amet.
+        {getFireDangerLevelImage(fireDangerLevel)}
+        <Text style={GlobalStyles.mediumFontSize}>
+          {riskInformationText[fireDangerLevel]}
         </Text>
       </View>
     </View>
   )
 }
 
+function getFireDangerDisplayNumber(fireDangerLevel) {
+  return (
+    <View style={{
+      width: '20%',
+      justifyContent: 'center',
+      alignItems: 'center',
+      paddingLeft: '3%',
+    }}>
+      <Text style={GlobalStyles.numberProperties}>
+        {fireDangerLevel}
+      </Text>
+    </View>
+  )
+}
+
+function getRiskLevelText(fireDangerLevel) {
+  return (
+    <View style={{
+      width: '30%',
+      justifyContent: 'center',
+      alignItems: 'flex-start'
+    }}>
+      <Text style={GlobalStyles.largeBoldFontSize}>
+        {riskLevels[fireDangerLevel]}
+        </Text>
+        <Text style={GlobalStyles.largeFontSize}>
+        {underRiskLevels[fireDangerLevel]}
+      </Text>
+    </View>
+  )
+}
+
+function getFireDangerLevelImage(fireDangerLevel) {
+  return (
+    <View style={GlobalStyles.containerAlignCenter}>
+      <Image
+        style={GlobalStyles.images}
+        source={meterLevels[fireDangerLevel]}
+      />
+    </View>
+  )
+}
 
 const styles = StyleSheet.create({
-  warning: {
-    ...GlobalStyles.flextangle,
-    ...GlobalStyles.containerAlignleft,
-    backgroundColor: '#2C3445',
-  },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: '24%'
+    height: windowHeight * 0.25
   },
   mediumFontSize: {
     ...GlobalStyles.mediumFontSize,
