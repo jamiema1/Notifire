@@ -41,5 +41,4 @@ const styles = StyleSheet.create({
     ...GlobalStyles.containerAlignleft,
     backgroundColor: '#2C3445',
   },
-
 })

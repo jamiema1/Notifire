@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 
 export const windowHeight = Dimensions.get('screen').height;
 
@@ -47,8 +47,8 @@ export const GlobalStyles = StyleSheet.create({
     fontSize: 14,
     color: 'white',
     fontFamily: 'Barlow',
-    paddingLeft: '6%'
-
+    paddingLeft: '6%',
+    paddingRight: '3%'
   },
   mediumBoldFontSize: {
     fontSize: 14,
@@ -76,6 +76,10 @@ export const GlobalStyles = StyleSheet.create({
   images: {
     // height: '100%',
     // width: '100%',
+  },
+  smallImages: {
+    height: 15,
+    width: 15,
   },
   defaultContainer: {
     flex: 1,
