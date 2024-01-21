@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyles, RoundedSquare } from '../../styles/globalStyles';
+import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
@@ -77,7 +77,7 @@ function getAirQualityString(airPollutionLevel) {
 const styles = StyleSheet.create({
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: '17%'
+    height: windowHeight*0.17
   },
   smallBoldFontSize: {
     ...GlobalStyles.smallBoldFontSize,

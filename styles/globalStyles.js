@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import {Dimensions} from 'react-native';
 
-const windowHeight = Dimensions.get('screen').height;
+export const windowHeight = Dimensions.get('screen').height;
 
 export const GlobalStyles = StyleSheet.create({
   globalStyles: {
@@ -46,7 +46,9 @@ export const GlobalStyles = StyleSheet.create({
   mediumFontSize: {
     fontSize: 14,
     color: 'white',
-    fontFamily: 'Barlow'
+    fontFamily: 'Barlow',
+    paddingLeft: '6%'
+
   },
   mediumBoldFontSize: {
     fontSize: 14,
