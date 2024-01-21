@@ -42,7 +42,7 @@ export default function Homepage({navigation}) {
 
   return (
     <ScrollView>
-      {fireDanger >= 3 && <WarningPopup />}
+      {fireDanger > 0 && <WarningPopup fireDanger={fireDanger}/>}
       <FireDanger fireDanger={fireDanger}/>
       <AirPollution airPollution={airPollution}/>
       <MapSection navigation={navigation} position={{lat: lat, lon: lon}}/>
