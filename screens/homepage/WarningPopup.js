@@ -1,16 +1,14 @@
+import React from 'react'
+import { GlobalStyles } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
-import { GlobalStyles } from './styles/globalStyles';
-import Homepage from './screens/homepage/Homepage';
+import { StatusBar } from 'expo-status-bar';
 
-export default function App() {
-
-  console.log(styles.container)
-
+export default function WarningPopup() {
   return (
     <View style={styles.container}>
-        <Homepage />
+      <b>WARNING</b>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -20,5 +18,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: "Barlow-Medium"
   }
 });
