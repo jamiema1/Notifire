@@ -3,7 +3,6 @@ import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
-
 const meter0 = require('../../assets/images/Meter 0.png')
 const meter1 = require('../../assets/images/Meter 1.png')
 const meter2 = require('../../assets/images/Meter 2.png')
@@ -24,8 +23,50 @@ const riskInformationText =
     "The fire danger level is at 5, extreme risk. Read and follow the warning instructions."
   ]
 
-export default function FireDanger() {
-  const fireDangerLevel = 5 // TODO change
+export default function FireDanger({fireDanger}) {
+
+  function getFireDangerDisplayNumber() {
+    return (
+      <View style={{
+        width: '20%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingLeft: '3%',
+      }}>
+        <Text style={GlobalStyles.numberProperties}>
+          {fireDanger}
+        </Text>
+      </View>
+    )
+  }
+
+  function getRiskLevelText() {
+    return (
+      <View style={{
+        width: '30%',
+        justifyContent: 'center',
+        alignItems: 'flex-start'
+      }}>
+        <Text style={GlobalStyles.largeBoldFontSize}>
+          {riskLevels[fireDanger]}
+          </Text>
+          <Text style={GlobalStyles.largeFontSize}>
+          {underRiskLevels[fireDanger]}
+        </Text>
+      </View>
+    )
+  }
+
+  function getFireDangerImage() {
+    return (
+      <View style={GlobalStyles.containerAlignCenter}>
+        <Image
+          style={GlobalStyles.images}
+          source={meterLevels[fireDanger]}
+        />
+      </View>
+    )
+  }
 
   return (
     <View style={styles.rectangle}>
@@ -34,57 +75,14 @@ export default function FireDanger() {
           FIRE DANGER
         </Text>
         <View style={{ flexDirection: 'row' }}>
-          {getFireDangerDisplayNumber(fireDangerLevel)}
-          {getRiskLevelText(fireDangerLevel)}
+          {getFireDangerDisplayNumber()}
+          {getRiskLevelText()}
         </View>
-        {getFireDangerLevelImage(fireDangerLevel)}
+        {getFireDangerImage()}
         <Text style={GlobalStyles.mediumFontSize}>
-          {riskInformationText[fireDangerLevel]}
+          {riskInformationText[fireDanger]}
         </Text>
       </View>
-    </View>
-  )
-}
-
-function getFireDangerDisplayNumber(fireDangerLevel) {
-  return (
-    <View style={{
-      width: '20%',
-      justifyContent: 'center',
-      alignItems: 'center',
-      paddingLeft: '3%',
-    }}>
-      <Text style={GlobalStyles.numberProperties}>
-        {fireDangerLevel}
-      </Text>
-    </View>
-  )
-}
-
-function getRiskLevelText(fireDangerLevel) {
-  return (
-    <View style={{
-      width: '30%',
-      justifyContent: 'center',
-      alignItems: 'flex-start'
-    }}>
-      <Text style={GlobalStyles.largeBoldFontSize}>
-        {riskLevels[fireDangerLevel]}
-        </Text>
-        <Text style={GlobalStyles.largeFontSize}>
-        {underRiskLevels[fireDangerLevel]}
-      </Text>
-    </View>
-  )
-}
-
-function getFireDangerLevelImage(fireDangerLevel) {
-  return (
-    <View style={GlobalStyles.containerAlignCenter}>
-      <Image
-        style={GlobalStyles.images}
-        source={meterLevels[fireDangerLevel]}
-      />
     </View>
   )
 }
