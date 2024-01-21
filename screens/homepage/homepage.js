@@ -7,9 +7,7 @@ import Load from './Load';
 import AirPollution from './AirPollution';
 import MapSection from './MapSection';
 import { getData } from '../../data/fireIndex';
-import Wind from './Wind';
-import Gust from './Gust';
-import Information from './Information';
+import City from './City';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
@@ -21,20 +19,11 @@ data.forEach((location, index) => {
   dataMap.set(index, location)
 })
 
-export default function Homepage({ navigation }) {
+export default function Homepage({navigation}) {
 
   const [location, setLocation] = useState(dataMap.get(1))
 
-  const [loading, setLoading] = useState(true)
-
-  setTimeout(() => {
-    setLoading(false)
-  }, 2150)
-
-  if (loading) {
-    return <Load />
-  }
-
+  const city = location.city
   const fireDanger = location.fire
   const airPollution = location.air
   const wind = location.wind
@@ -44,20 +33,12 @@ export default function Homepage({ navigation }) {
   const lon = location.lng
 
   return (
-    <ScrollView>
-      {fireDanger > 0 && <WarningPopup fireDanger={fireDanger} />}
+    <ScrollView style={styles.homepage}>
+      <City city={city}/>
+      {fireDanger >= 3 && <WarningPopup />}
       <FireDanger fireDanger={fireDanger}/>
       <AirPollution airPollution={airPollution}/>
       <MapSection navigation={navigation} position={{lat: lat, lon: lon}}/>
-      <View style={{ flexDirection: 'row' }}>
-        <View style={{ width: '50%' }}>
-          <Wind direction={direction} wind={wind} />
-        </View>
-        <View style={{ width: '50%' }}>
-          <Gust direction={direction} gust={gusts} />
-        </View>
-      </View>
-      <Information />
     </ScrollView>
   )
 }
@@ -71,5 +52,8 @@ const styles = StyleSheet.create({
   },
   text: {
     ...GlobalStyles.fontSize
+  },
+  homepage: {
+    backgroundColor: "#212942"
   }
 })
