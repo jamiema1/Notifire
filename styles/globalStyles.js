@@ -77,6 +77,10 @@ export const GlobalStyles = StyleSheet.create({
     // height: '100%',
     // width: '100%',
   },
+  smallImages: {
+    height: 15,
+    width: 15,
+  },
   defaultContainer: {
     flex: 1,
     borderRadius: 10,

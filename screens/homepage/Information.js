@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
     smallBoldFontSize: {
         ...GlobalStyles.smallBoldFontSize,
         paddingLeft: '6%',
-        paddingRight: '20%'
+        paddingRight: '10%'
     }
 });

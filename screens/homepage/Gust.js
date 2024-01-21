@@ -14,7 +14,6 @@ const arrows = {
     "SE": seArrow,
     "SW": swArrow
 }
-
 export default function Gust({ direction, gust }) {
     function getGustDisplayNumber() {
         return (
@@ -31,7 +30,6 @@ export default function Gust({ direction, gust }) {
         )
     }
 
-
     function getGustStringAndDirection() {
         return (
             <View style={{
@@ -43,8 +41,8 @@ export default function Gust({ direction, gust }) {
                     km/h
                     {'\n'}
                     <Image
-                        style={styles.images}
-                        source={arrows.direction}
+                        style={GlobalStyles.smallImages}
+                        source={arrows[direction]}
                     />
                 </Text>
             </View>

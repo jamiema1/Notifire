@@ -43,8 +43,8 @@ export default function Wind({ direction, wind }) {
                     km/h
                     {'\n'}
                     <Image
-                        style={styles.images}
-                        source={arrows.direction}
+                        style={GlobalStyles.smallImages}
+                        source={arrows[direction]}
                     />
                 </Text>
             </View>
@@ -75,5 +75,5 @@ const styles = StyleSheet.create({
     smallBoldFontSize: {
         ...GlobalStyles.smallBoldFontSize,
         paddingLeft: '6%'
-    }
+    },
 });
