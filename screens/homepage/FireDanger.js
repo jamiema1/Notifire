@@ -20,7 +20,7 @@ export default function FireDanger() {
 
   return (
     <View style={styles.rectangle}>
-      <View style={styles.warning}>
+      <View style={GlobalStyles.defaultContainer}>
         <Text style={GlobalStyles.smallBoldFontSize}>
           FIRE DANGER
         </Text>
@@ -50,11 +50,6 @@ export default function FireDanger() {
 
 
 const styles = StyleSheet.create({
-  warning: {
-    ...GlobalStyles.flextangle,
-    ...GlobalStyles.containerAlignleft,
-    backgroundColor: '#2C3445',
-  },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
     height: '24%'
