@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Image } from 'react-native';
 import WarningPopup from './WarningPopup';
+import FireDanger from './FireDanger';
 
 const logo = require('../../assets/images/notifire_logo.png')
 
@@ -14,10 +15,7 @@ export default function Homepage() {
   return (
     <>
       {fireDangerRating >= 3 && <WarningPopup />}
-      <Image
-        style={styles.logo}
-        source={logo}
-      />
+      <FireDanger />
       <StatusBar style="auto" />
     </>
   )
