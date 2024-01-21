@@ -39,14 +39,13 @@ export default function Wind({ direction, wind }) {
                 justifyContent: 'center',
                 alignItems: 'flex-start'
             }}>
-                <Text style={GlobalStyles.largeFontSize}>
+                <Text style={styles.kmh}>
                     km/h
-                    {'\n'}
-                    <Image
-                        style={GlobalStyles.smallImages}
-                        source={arrows[direction]}
-                    />
                 </Text>
+                <Image
+                    style={GlobalStyles.smallImages}
+                    source={arrows[direction]}
+                />
             </View>
         )
     }
@@ -70,10 +69,14 @@ export default function Wind({ direction, wind }) {
 const styles = StyleSheet.create({
     rectangle: {
         ...GlobalStyles.containerAlignleft,
-        height: windowHeight * 0.17
+        // height: windowHeight * 0.17
     },
     smallBoldFontSize: {
         ...GlobalStyles.smallBoldFontSize,
-        paddingLeft: '6%'
+        paddingLeft: '15%'
     },
+    kmh: {
+        ...GlobalStyles.largeFontSize,
+        paddingBottom: 5
+    }
 });

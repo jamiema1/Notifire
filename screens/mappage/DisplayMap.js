@@ -45,14 +45,12 @@ export default function DisplayMap({position}) {
     <MapView
       style={{ alignSelf: 'stretch', height: '100%' }}
       region={mapRegion}
-      showsScale={true}
+      // showsScale={true}
       rotateEnabled={false}
       showsPointsOfInterest={false}
       showsBuildings={false}
-      // minDelta={0.1}
       maxDelta={50}
       onRegionChangeComplete={(newRegion) => handleRegionChange(newRegion)}
-      // onMarkerPress={(e) => {console.log(e)}}
     >
       {data.map((location) => 
         <Marker 

@@ -13,14 +13,14 @@ const meter5 = require('../../assets/images/Meter 5.png')
 const meterLevels = [meter0, meter1, meter2, meter3, meter4, meter5]
 
 const riskLevels = ["Very Low", "Low", "Moderate", "High", "Very High", "Extreme"]
-const underRiskLevels = ["No Warning", "Advice", "Advice", "Watch and Act", "Watch and Act", "Emergency Warning"]
+const underRiskLevels = ["No Warning", "Advise", "Advise", "Watch and Act", "Watch and Act", "Emergency Warning"]
 const riskInformationText =
   ["The fire danger level is at 0, very low risk. There is no current threat in your area.",
-    "The fire danger level is at 1, low risk. Read and follow the warning instructions.",
-    "The fire danger level is at 2, moderate risk. Read and follow the warning instructions.",
-    "The fire danger level is at 3, high risk. Read and follow the warning instructions.",
-    "The fire danger level is at 4, very high risk. Read and follow the warning instructions.",
-    "The fire danger level is at 5, extreme risk. Read and follow the warning instructions."
+    "The fire danger level is at 1, low risk. Read and follow the warning instructions above.",
+    "The fire danger level is at 2, moderate risk. Read and follow the warning instructions above.",
+    "The fire danger level is at 3, high risk. Read and follow the warning instructions above.",
+    "The fire danger level is at 4, very high risk. Read and follow the warning instructions above.",
+    "The fire danger level is at 5, extreme risk. Read and follow the warning instructions above."
   ]
 
 export default function FireDanger({ fireDanger }) {
@@ -43,7 +43,7 @@ export default function FireDanger({ fireDanger }) {
   function getRiskLevelText() {
     return (
       <View style={{
-        width: '30%',
+        // width: '30%',
         justifyContent: 'center',
         alignItems: 'flex-start'
       }}>
@@ -90,7 +90,7 @@ export default function FireDanger({ fireDanger }) {
 const styles = StyleSheet.create({
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: windowHeight * 0.25
+    // height: windowHeight * 0.25
   },
   mediumFontSize: {
     ...GlobalStyles.mediumFontSize,

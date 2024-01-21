@@ -60,7 +60,7 @@ export default function AirPollution({airPollution}) {
   return (
     <View style={styles.rectangle}>
       <View style={GlobalStyles.defaultContainer}>
-        <Text style={GlobalStyles.smallBoldFontSize}>
+        <Text style={GlobalStyles.title}>
           AIR POLLUTION
         </Text>
         <View style={{ flexDirection: 'row'}}>
@@ -77,7 +77,7 @@ export default function AirPollution({airPollution}) {
 const styles = StyleSheet.create({
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: windowHeight*0.17
+    // height: windowHeight*0.17
   },
   images: {
     height: 15,

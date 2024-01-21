@@ -1,14 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Image, View, Text, TouchableOpacity } from 'react-native';
-import { GlobalStyles } from '../../styles/globalStyles';
+import { GlobalStyles, windowHeight, windowWidth } from '../../styles/globalStyles';
+import { useNavigation } from '@react-navigation/native';
 
 const savedLogo = require('../../assets/images/icon-saved.png')
 const logo = require('../../assets/images/notifire_logo.png')
 
-export default function Title () {
+export default function Title ({dataMap, setLocation}) {
+
+  const [index, setIndex] = useState(0);
+
+  const navigation = useNavigation()
+
+  function getScreenKey() {
+    const state = navigation.getState()
+    const route = state.routes.find((r) => r.name === "Home");
+    return route?.key || null;
+  }
+
+  const key = getScreenKey()
+
   return (
-    <View style={{ width: '90%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-      <TouchableOpacity onPress={() => console.log("click")}>
+    <View style={{ width: windowWidth * 0.9, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+      <TouchableOpacity onPress={() => {
+        const newIndex = (index + 1) % dataMap.size
+        setLocation(dataMap.get(newIndex))
+        setIndex(newIndex)
+        navigation.navigate({
+          name: "Home",
+          params: { location: dataMap.get(newIndex)},
+          key
+        });
+      }}>
         <Image
           source={savedLogo}
           style={{ width: 30, height: 30 }}

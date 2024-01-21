@@ -33,18 +33,17 @@ export default function Gust({ direction, gust }) {
     function getGustStringAndDirection() {
         return (
             <View style={{
-                width: '50%',
+                // width: '50%',
                 justifyContent: 'center',
-                alignItems: 'flex-start'
+                alignItems: 'flex-start',
             }}>
-                <Text style={GlobalStyles.largeFontSize}>
+                <Text style={styles.kmh}>
                     km/h
-                    {'\n'}
-                    <Image
-                        style={GlobalStyles.smallImages}
-                        source={arrows[direction]}
-                    />
                 </Text>
+                <Image
+                    style={GlobalStyles.smallImages}
+                    source={arrows[direction]}
+                />
             </View>
         )
     }
@@ -53,7 +52,7 @@ export default function Gust({ direction, gust }) {
         <View style={styles.rectangle}>
             <View style={GlobalStyles.defaultContainer}>
                 <Text style={styles.smallBoldFontSize}>
-                    GUST
+                    GUSTS
                 </Text>
                 <View style={{ flexDirection: 'row' }}>
                     {getGustDisplayNumber()}
@@ -68,10 +67,14 @@ export default function Gust({ direction, gust }) {
 const styles = StyleSheet.create({
     rectangle: {
         ...GlobalStyles.containerAlignleft,
-        height: windowHeight * 0.17
+        // height: windowHeight * 0.17
     },
     smallBoldFontSize: {
         ...GlobalStyles.smallBoldFontSize,
-        paddingLeft: '6%'
+        paddingLeft: '15%'
+    },
+    kmh: {
+        ...GlobalStyles.largeFontSize,
+        paddingBottom: 5
     }
 });

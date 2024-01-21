@@ -7,7 +7,7 @@ export default function Information() {
     return (
         <View style={styles.rectangle}>
             <View style={GlobalStyles.defaultContainer}>
-                <Text style={styles.smallBoldFontSize}>
+                <Text style={GlobalStyles.title}>
                     INFORMATION
                 </Text>
                 <Text style={GlobalStyles.mediumFontSize}>
@@ -22,7 +22,7 @@ export default function Information() {
 const styles = StyleSheet.create({
     rectangle: {
         ...GlobalStyles.containerAlignleft,
-        height: windowHeight * 0.2
+        // height: windowHeight * 0.2
     },
     smallBoldFontSize: {
         ...GlobalStyles.smallBoldFontSize,
