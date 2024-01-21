@@ -1,10 +1,5 @@
-import { View, Text } from 'react-native'
 import React, { useState } from 'react'
-import { Platform, StyleSheet } from 'react-native';
-import MapView from 'react-native-maps';
-console.log(Platform.OS)
-
-
+import MapView, {Marker} from 'react-native-maps';
 
 export default function DisplayMap() {
   const [mapRegion, setmapRegion] = useState({
@@ -18,6 +13,12 @@ export default function DisplayMap() {
     <MapView
       style={{ alignSelf: 'stretch', height: '100%' }}
       region={mapRegion}
-    /> 
+      showsScale={true}
+    >
+    <Marker coordinate = {{latitude: -33.8688,longitude: 151.2093}}
+     pinColor = {"purple"} // any color
+     title={"title"}
+     description={"description"}/>
+    </MapView> 
   );
 }

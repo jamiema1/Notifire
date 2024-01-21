@@ -2,20 +2,29 @@ import React from 'react'
 import { GlobalStyles } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { Image } from 'react-native-web';
+import { Image } from 'react-native';
+import CustomButton from '../../customComponents/Button';
 
-// const logo = require('../../assets/notifire_logo.png')
+const logo = require('../../assets/notifire_logo.png')
 
-export default function Homepage() {
+export default function Homepage({navigation}) {
+
+
 
   return (
     <>
       {/* <Text>Open up App.js to start working on your app!</Text> */}
-      {/* <Image
+      <Image
         style={styles.logo}
         source={logo}
-      /> */}
-      <StatusBar style="auto" />
+      />
+      <CustomButton 
+        onPress={() =>
+          navigation.navigate('Map')
+        }
+        title="Go to Map"
+      />
+      {/* <StatusBar style="auto" /> */}
     </>
   )
 }
@@ -23,7 +32,6 @@ export default function Homepage() {
 
 const styles = StyleSheet.create({
   logo: {
-    ...GlobalStyles.globalStyles,
     borderRadius: 25,
     width: 75,
     height: 75,
