@@ -1,13 +1,29 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { GlobalStyles } from './styles/globalStyles';
-import Homepage from './screens/homepage/Homepage';
+import Homepage from './screens/homepage/Home';
 import MapPage from './screens/mappage/MapPage';
 import { NavigationContainer } from '@react-navigation/native' 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useFonts } from 'expo-font';
+import Title from './screens/homepage/Title';
+import LoadingPage from './screens/loadingpage/LoadingPage';
+import { useState } from 'react';
+import { getData } from './data/fireIndex';
+import BackButton from './screens/mappage/BackButton';
 
+
+
+const data = getData()
+
+const dataMap = new Map()
+
+data.forEach((location, index) => {
+  dataMap.set(index, location)
+})
 
 export default function App() {
+
+  const [location, setLocation] = useState(dataMap.get(0))
+
+  // console.log(location)
 
   const [fontsLoaded] = useFonts({
     'Barlow': require("./assets/fonts/Barlow-Regular.ttf"),
@@ -25,27 +41,38 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen
+       <Stack.Screen
+          name="Loading"
+          component={LoadingPage}
+          options={{
+            title: '',
+            headerStyle: {
+              backgroundColor: "#212942"
+            },
+          }}
+        />
+        <Stack.Screen 
           name="Home"
           component={Homepage}
+          initialParams={{location}}
+          options={{
+            headerTitle: () => <Title dataMap={dataMap} setLocation={setLocation}/>,
+            headerBackVisible: false,
+            headerStyle: {
+              backgroundColor: "#212942"
+            },
+          }}
         />
         <Stack.Screen
           name="Map"
           component={MapPage}
+          options={{
+            headerTransparent: true,
+            headerTitle: '',
+            headerLeft: () => <BackButton />
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    ...GlobalStyles.globalStyles,
-    // ...GlobalStyles.backgroundColor,
-    flex: 1,
-    flexDirection: "column",
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});

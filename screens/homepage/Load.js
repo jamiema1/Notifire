@@ -5,7 +5,7 @@ export default function Load() {
 
   return (
     <View style={styles.imgContainer}>
-      <Image source={require('../../assets/images/loading.gif')} style={styles.img} />
+      <Image source={require('../../assets/images/blurry_loading.gif')} style={styles.img} />
     </View>
   )
 }

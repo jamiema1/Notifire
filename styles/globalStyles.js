@@ -2,12 +2,9 @@ import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
 
 export const windowHeight = Dimensions.get('screen').height;
+export const windowWidth = Dimensions.get('screen').width;
 
 export const GlobalStyles = StyleSheet.create({
-  globalStyles: {
-    // fontFamily: "Calibri",
-
-  },
   containerAlignleft: {
     borderRadius: 10,
     padding: 10,
@@ -22,10 +19,6 @@ export const GlobalStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  flextangle: {
-    flex: 1
-    // flexDirection: 'row'
-  },
   title: {
     fontSize: 12,
     color: 'white',
@@ -35,8 +28,7 @@ export const GlobalStyles = StyleSheet.create({
   smallFontSize: {
     fontSize: 12,
     color: 'white',
-    fontFamily: 'Barlow',
-    // padding: 10
+    fontFamily: 'Barlow'
   },
   smallBoldFontSize: {
     fontSize: 12,
@@ -65,6 +57,11 @@ export const GlobalStyles = StyleSheet.create({
     color: 'white',
     fontFamily: 'BarlowBold'
   },
+  extraLargeBoldFontSize: {
+    fontSize: 36,
+    color: 'white',
+    fontFamily: 'BarlowBold'
+  },
   numberProperties: {
     fontSize: 48,
     color: 'white',
@@ -72,10 +69,6 @@ export const GlobalStyles = StyleSheet.create({
   },
   backgroundColor: {
     backgroundColor: '#161F33'
-  },
-  images: {
-    // height: '100%',
-    // width: '100%',
   },
   smallImages: {
     height: 15,
@@ -85,6 +78,8 @@ export const GlobalStyles = StyleSheet.create({
     flex: 1,
     borderRadius: 10,
     padding: 10,
+    paddingTop: 20,
+    paddingBottom: 20,
     width: '100%',
     justifyContent: 'center',
     alignItems: 'left',

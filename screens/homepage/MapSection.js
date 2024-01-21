@@ -1,25 +1,25 @@
-import React, { useState } from 'react'
-import { Button, Dimensions, StyleSheet, Text, View } from 'react-native';
-import { GlobalStyles, RoundedSquare } from '../../styles/globalStyles';
+import React from 'react'
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { GlobalStyles } from '../../styles/globalStyles';
 import MapView from 'react-native-maps';
 
 export default function MapSection({navigation, position}) {
 
-  const [mapRegion, setmapRegion] = useState({
+  const mapRegion = {
     latitude: position.lat,
     longitude: position.lon,
     latitudeDelta: 0.1,
     longitudeDelta: 0.1,
-  });
+  }
 
   return (
     <View style={styles.rectangle}>
-      <View style={styles.warning}>
-        <Text style={GlobalStyles.smallBoldFontSize}>
+      <View style={GlobalStyles.defaultContainer}>
+        <Text style={GlobalStyles.title }>
           MAP
         </Text>
         <MapView
-          style={{ alignSelf: 'stretch', height: '100%' }}
+          style={{ alignSelf: 'stretch', height: '85%', margin: '6%' }}
           region={mapRegion}
           rotateEnabled={false}
           scrollEnabled={false}
@@ -35,10 +35,5 @@ const styles = StyleSheet.create({
   rectangle: {
     ...GlobalStyles.containerAlignleft,
     height: Dimensions.get("screen").height * 0.5
-  },
-  warning: {
-    ...GlobalStyles.flextangle,
-    ...GlobalStyles.containerAlignleft,
-    backgroundColor: '#2C3445',
-  },
+  }
 })

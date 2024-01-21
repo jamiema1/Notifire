@@ -3,17 +3,19 @@ import { GlobalStyles, windowHeight } from '../../styles/globalStyles';
 import { StyleSheet, Text, View } from 'react-native';
 import { Image } from 'react-native';
 
-const fireIcon12 = require('../../assets/images/icon-fire.png')
+const fireIcon12 = require('../../assets/images/fire-blue.png')
 const fireIcon3 = require('../../assets/images/fire-orange.png')
 const fireIcon45 = require('../../assets/images/fire-red.png')
 const orange = '#E56E0C'
 const red = '#ED1818'
 const white = '#F5EEE9'
+const blue = "#2C3445" 
 
 const icon = ['', fireIcon12, fireIcon12, fireIcon3, fireIcon45, fireIcon45]
-const bgColor = ['', white, white, orange, red, red]
-const textColor = ['', orange, orange, white, white, white]
+const bgColor = ['', blue, blue, orange, red, red]
+const textColor = ['', white, white, white, white, white]
 
+    // backgroundColor: 'rgba(255, 255, 255, 0.5)'
 const warningMessage = 
 ["", 
 "An incident has started. There is no immediate danger. Stay up to date in case the situation changes.",
@@ -27,21 +29,23 @@ export default function WarningPopup({fireDanger}) {
   return (
     <View style={styles.rectangle}>
       <View style={{
-        ...GlobalStyles.flextangle,
-        ...GlobalStyles.containerAlignleft,
-        backgroundColor: bgColor[fireDanger]
+        ...GlobalStyles.defaultContainer,
+        backgroundColor: bgColor[fireDanger],
       }}>
-        <Text style={{
-          ...GlobalStyles.title,
-          color: textColor[fireDanger]
-          }}>
-          WARNING
-          <Image
-            style={styles.image}
-            source={icon[fireDanger]}
-          />
-          {'\n'}
-        </Text>
+        <View style={{flexDirection:'row'}}>
+          <Text style={{
+            ...GlobalStyles.title,
+            color: textColor[fireDanger],
+            paddingRight: 10
+            }}>
+            WARNING
+            {'\n'}
+          </Text>
+            <Image
+              style={styles.image}
+              source={icon[fireDanger]}
+            />
+        </View>
         <Text style={{...GlobalStyles.mediumFontSize, color: textColor[fireDanger]}}>{warningMessage[fireDanger]}</Text>
       </View>
     </View>
@@ -51,11 +55,10 @@ export default function WarningPopup({fireDanger}) {
 const styles = StyleSheet.create({
   text: {
     ...GlobalStyles.smallFontSize,
-    // alignContent: 'left'
   },
   rectangle: {
     ...GlobalStyles.containerAlignleft,
-    height: windowHeight * 0.14
+    // height: windowHeight * 0.20
   },
   image: {
     height: 15,

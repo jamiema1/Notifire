@@ -1,8 +1,6 @@
-import { Button, Text, View } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
 import DisplayMap from './DisplayMap'
 import { StyleSheet } from 'react-native'
-import CustomButton from '../../customComponents/Button'
 
 export default function MapPage({route, navigation}) {
   
