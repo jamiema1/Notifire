@@ -4,8 +4,6 @@ import Homepage from './screens/homepage/Homepage';
 
 export default function App() {
 
-  console.log(styles.container)
-
   return (
     <View style={styles.container}>
         <Homepage />
@@ -16,6 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     ...GlobalStyles.globalStyles,
+    // ...GlobalStyles.backgroundColor,
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
