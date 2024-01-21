@@ -23,7 +23,7 @@ const riskInformationText =
     "The fire danger level is at 5, extreme risk. Read and follow the warning instructions."
   ]
 
-export default function FireDanger({fireDanger}) {
+export default function FireDanger({ fireDanger }) {
 
   function getFireDangerDisplayNumber() {
     return (
